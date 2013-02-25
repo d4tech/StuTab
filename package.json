@@ -3,12 +3,12 @@
   , "version": "0.0.1"
   , "private": true
   , "dependencies": {
-      "express": "2.5.8"
+      "express": "3.x"
     , "jade": ">= 0.0.1"
     , "mongodb": "latest"
     , "mongoose": "latest"
-    , "twitter-bootstrap": "latest"
     , "passport" : "latest"
     , "crypto" : "latest"
+    , "client-sessions" : "latest"
   }
 }
