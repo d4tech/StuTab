@@ -6,13 +6,26 @@ html
 		link(rel="stylesheet", href="/stylesheets/bootstrap/css/bootstrap.min.css")	
 	body
 		.navbar.navbar-fixed-top.navbar-inverse
-			.navbar-inner
-				.pull-right
-					a.brand(href='index.html') CUCEK	
-				ul.nav
-					li
-						a(href='/index') Home
-					li
-						a(href='getting-started.html') Get
-		block content				
+			.navbar-inner	
+				.container	
+					ul.nav
+						li
+							a(href='/index') Home
+						li
+							a(href='getting-started.html') Get
+					
+					.btn-grp.pull-right
+						a.btn(href='/logout') 
+							|Logout
+							i.icon-off
+						//- 	span.caret
+						//- ul.dropdown-menu
+						//- 	li 
+						//- 		a(href='/userSettings') Settings
+						//- 	li
+						//- 		a(href='/logout') Logout				
+					//- script(src='/stylesheets/bootstrap/js/bootstrap.min.js',type = 'text/javascript')
+		.container
+		block content
+
 					

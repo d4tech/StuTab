@@ -38,7 +38,7 @@ app.get('/',function(req, res) {
     res.render('login');
   else
   {
-    res.render('index',{ title : req.session.name});
+    res.render('index',{ title : req.cookies.name});
   }
 });
 
@@ -55,7 +55,7 @@ app.post('/',function (req, res) {
     .select('pass')
     .exec(function(err,user) {
       if (!err && user.pass===req.body.pass) {
-        res.cookie(req.body.uid,{maxage : 60000});
+        res.cookie(user,req.body.uid,{maxage : 60000});
         res.render('index',{title : 'Thank u Lord'});
       } else{
         res.redirect('/');
@@ -63,9 +63,16 @@ app.post('/',function (req, res) {
     }
   });
 
-  mongoose.disconnect(); 
+  mongoose.disconnect();
 });
 
+app.get('/logout',function (req,res) {
+  // var naam = req.Cookies.name
+  res.clearCookie('rick');
+  res.redirect('/');
+
+
+});
 //app.get('/index',routes.index);
 
 app.listen(3003);
